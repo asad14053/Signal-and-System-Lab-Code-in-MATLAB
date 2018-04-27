@@ -1,0 +1,29 @@
+
+close all;
+clear all;
+m=input('Data limit:');
+for i=1:1:m
+    y(i)=input('Data:');
+end
+n=input('Enter Zero Index: ');
+    p=1-n;
+q=m-n;
+x=p:q;
+table = [y',x'];
+disp(table');
+stem(x,y);
+xlabel('Time');
+ylabel('Amplitude');
+for i=1:1:m
+         fprintf('%d ',y(i));
+end
+        fprintf('\n');
+for i=1:1:m
+    if(i==n)
+        fprintf('^ ');
+    else
+         fprintf('  ');
+    end
+end
+
+

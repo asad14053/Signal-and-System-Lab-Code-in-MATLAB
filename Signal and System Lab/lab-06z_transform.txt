@@ -1,0 +1,29 @@
+
+clc;
+clear all;
+close all;
+%First input
+fprintf('Enter signal Size -->');
+m1=input(' ');
+for i=1:1:m1
+y1(i)=input('Input: ');
+end
+fprintf('Enter zero Index-->');
+n1=input(' ');
+il1=-(n1-1);
+ir1=m1-n1;
+x1=il1:ir1;
+b=0;
+y=sym('z');
+x=1;
+for i=il1:1:ir1
+    b=b+y1(x)*y^(-i);
+    x=x+1;
+end
+pretty(b);
+c=ztrans(b);
+pretty(c);
+d=iztrans(c);
+pretty(d);
+
+

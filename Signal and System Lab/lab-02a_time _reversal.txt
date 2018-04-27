@@ -1,0 +1,26 @@
+close all;
+clear all;
+m=input('Data limit:');
+for i=1:1:m
+    y(i)=input('Data :');
+end
+n=input('Enter Zero Index: ');
+p=1-n;
+q=m-n;
+x=p:q;
+subplot(2,1,1);
+stem(x,y)
+xlabel('Time');
+ylabel('Amplitude');
+title('before time reversing');
+ o=m;
+for i=1:1:m
+g(i)=y(o);
+o=o-1;
+end
+xx=-q:-p;
+subplot(2,1,2);
+stem(xx,g);
+xlabel('Time');
+ylabel('Amplitude');
+title('After time reversing : ')

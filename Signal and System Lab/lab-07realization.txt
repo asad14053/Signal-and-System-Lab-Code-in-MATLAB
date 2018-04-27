@@ -1,0 +1,30 @@
+% Program P5_1_MATLAB
+% Conversion of a rational transfer function to its factored form
+M = input('value of M =');
+for i=1:1:M
+num(i) = input('Numerator coefficient vector = ');
+end
+for i=1:1:M
+den = input('Denominator coefficient vector = ');
+end
+[A, B] = eqtflength(num, den);
+[z,p,k] = tf2zp(A, B);
+sos = zp2sos(z,p,k);
+display(sos);
+display(z);
+display(p);
+display(k);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[r1,p1,k1] = residuez(num,den);
+disp('Parallel Form ');
+disp('Residues are');
+
+disp(r1);
+disp('Poles are');
+
+disp(p1);
+
+disp('Constant value');
+disp(k1);
+

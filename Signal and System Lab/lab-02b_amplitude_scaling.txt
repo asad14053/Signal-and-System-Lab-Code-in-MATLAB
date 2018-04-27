@@ -1,0 +1,31 @@
+close all;
+clear all;
+m=input('Data limit:');
+for i=1:1:m
+    y(i)=input('Data :');
+end
+n=input('Enter Zero Index: ');
+p=1-n;
+q=m-n;
+x=p:q;
+t=input('Input amplitude: ');
+r=input('Enter 1 for increase and 2 for decrease : ');
+if(r==1)
+for i=1:1:m  
+w(i)=t*y(i);
+end
+else
+for i=1:1:m  
+w(i)=y(i)/t;
+end
+end
+subplot(2,1,1);
+stem(x,y);
+xlabel('Time');
+ylabel('Amplitude');
+title('before scaling of amplitude:')
+subplot(2,1,2);
+stem(x,w);
+xlabel('Time');
+ylabel('Amplitude');
+title('After amplitude scaling : ')
